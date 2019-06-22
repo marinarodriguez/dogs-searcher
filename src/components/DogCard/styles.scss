@@ -1,7 +1,27 @@
 @import '../../stylesheets/variables';
 
 .dog__card{
-    border: 1px dashed $colorLightBlue;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $colorDarkBlue;
+    border-radius: 4px;
     margin: 10px 10px;
+    width: 250px;
     padding: 10px;
 }
+.btn__card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $colorLightBlue;
+    border: 1px transparent solid;
+    color: white;
+    height: 30px;
+    text-align: center;
+    width: 35px;
+    align-self: flex-end;
+    font-size: 20px;
+    font-family: 'Mali', cursive;
+  }
+  
