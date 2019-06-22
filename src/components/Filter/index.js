@@ -7,6 +7,7 @@ const Filter = props => {
     <div className="filter__container">
       <form className="filter__form">
         <input
+          type="text"
           className="filter__input"
           placeholder="yorkshire"
           value={filter}

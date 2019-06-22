@@ -1,0 +1,39 @@
+@import "../../stylesheets/variables";
+
+.add-dog__container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.form__add {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+.label__add {
+  margin-top: 15px;
+}
+.input__add {
+  max-width: 250px;
+  margin: 5px 0 10px;
+  height: 25px;
+  font-size: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  font-family: "Indie Flower", cursive;
+  border: 2px solid $colorDarkBlue;
+}
+.select__add {
+  background-color: white;
+}
+.btn__add {
+  background-color: $colorDarkBlue;
+  border: 1px transparent solid;
+  color: white;
+  height: 40px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: "Indie Flower", cursive;
+}
