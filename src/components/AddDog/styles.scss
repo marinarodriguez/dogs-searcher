@@ -38,6 +38,9 @@
   font-family: 'Mali', cursive;
   cursor: pointer;
   transition: background-color ease 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
    ;
   &:hover{
     background-color: $colorDarkBlue;

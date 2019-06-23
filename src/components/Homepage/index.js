@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../Header";
 import Main from "../Main";
 import Footer from "../Footer";
+import PropTypes from "prop-types";
 
 const Homepage = props => {
   const {
@@ -12,9 +13,7 @@ const Homepage = props => {
     isLoading,
     handleInputChange,
     newDog,
-    handleAdd,
-    getDog,
-    handleEditDog
+    handleAdd
   } = props;
   return (
     <div>
@@ -28,12 +27,21 @@ const Homepage = props => {
         handleInputChange={handleInputChange}
         newDog={newDog}
         handleAdd={handleAdd}
-        getDog={getDog}
-        handleEditDog={handleEditDog}
       />
       <Footer />
     </div>
   );
+};
+
+Homepage.propTypes = {
+  dataDogs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string.isRequired,
+  handleFilter: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  newDog: PropTypes.object.isRequired,
+  handleAdd: PropTypes.func.isRequired
 };
 
 export default Homepage;

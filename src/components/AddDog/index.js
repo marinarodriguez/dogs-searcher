@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.scss";
+import PropTypes from 'prop-types';
 
 const AddDog = props => {
   const { handleInputChange, newDog, handleAdd } = props;
@@ -17,7 +18,7 @@ const AddDog = props => {
           id="name"
           name="name"
           type="text"
-          required
+
         />
         <label className="label__add" htmlFor="age">
           {" "}
@@ -30,7 +31,7 @@ const AddDog = props => {
           id="age"
           name="age"
           type="number"
-          required
+
         />
         <label className="label__add" htmlFor="gender">
           {" "}
@@ -57,7 +58,7 @@ const AddDog = props => {
           id="breed"
           name="breed"
           type="text"
-          required
+      
         />
         <label className="label__add" htmlFor="location">
           {" "}
@@ -70,12 +71,17 @@ const AddDog = props => {
           id="location"
           name="location"
           type="text"
-          required
         />
-        <button className="btn__add" onClick={handleAdd}>Add Doggo</button>
+        <div className="btn__add" onClick={handleAdd}>Add Doggo</div>
       </form>
     </div>
   );
+};
+
+AddDog.propTypes = {
+  handleInputChange: PropTypes.func.isRequired,
+  newDog: PropTypes.object.isRequired,
+  handleAdd: PropTypes.func.isRequired
 };
 
 export default AddDog;

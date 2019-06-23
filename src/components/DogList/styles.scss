@@ -2,11 +2,21 @@
     text-align: center;
     margin: 30px 30px 50px 30px;
 }
+.doglist__container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .doglist{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-content: flex-start;
+    @media all and (min-width: 768px){
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 .doglist__results{
     text-align: center;

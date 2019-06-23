@@ -3,7 +3,7 @@ import "./styles.scss";
 import { Route, Switch } from "react-router-dom";
 import AddDog from "../AddDog";
 import Search from "../Search";
-import EditDog from "../EditDog";
+import PropTypes from 'prop-types';
 
 const Main = props => {
   const {
@@ -15,8 +15,6 @@ const Main = props => {
     handleInputChange,
     newDog,
     handleAdd,
-    getDog,
-    handleEditDog
   } = props;
   return (
     <div className="main__container">
@@ -42,17 +40,21 @@ const Main = props => {
             );
           }}
         />
-        <Route
-              path="/editdog/:id"
-              render={routerProps => (
-                <EditDog match={routerProps.match} handleEditDog={handleEditDog}  newDog={newDog} handleInputChange={handleInputChange}
-                dogToEdit={getDog(routerProps.match.params.id)}
-                  />
-              )}
-            />
       </Switch>
     </div>
   );
 };
+
+Main.propTypes = {
+  dataDogs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string.isRequired,
+  handleFilter: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  newDog: PropTypes.object.isRequired,
+  handleAdd: PropTypes.func.isRequired
+};
+
 
 export default Main;

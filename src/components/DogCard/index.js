@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import {Link} from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const DogCard = props => {
   const { dog, handleDelete } = props;
@@ -18,11 +18,14 @@ const DogCard = props => {
       <button className="btn__card delete" value={dog._id} onClick={handleDelete}>
         X
       </button>
-      <Link to={`/editdog/${dog._id}`} className="btn__card edit">
-        edit
-      </Link>
     </div>
   );
 };
+
+DogCard.propTypes = {
+  dog: PropTypes.object.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+};
+
 
 export default DogCard;
