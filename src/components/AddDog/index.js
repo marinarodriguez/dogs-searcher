@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 
 const AddDog = props => {
   const { handleInputChange, newDog, handleAdd,isDisabled } = props;
@@ -74,9 +75,9 @@ const AddDog = props => {
           type="text"
           required
         />
-        <button disabled={isDisabled} type="button" className="btn__add" onClick={handleAdd}>
+        <Link className="link__header" to={`/`}><button disabled={isDisabled} type="button" className="btn__add" onClick={handleAdd}>
           Add Doggo
-        </button>
+        </button></Link>
       </form>
     </div>
   );

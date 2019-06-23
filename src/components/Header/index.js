@@ -8,7 +8,7 @@ const Header = props => {
     <div className="header__container">
       <div className="header__wrapper">
         <div className="header__title">
-        <img className="image__logo" src={Logo} alt="logo" />
+        <Link className="link__header" to={`/`}><img className="image__logo" src={Logo} alt="logo" /></Link>
         </div>
         <div className="header__menu">
           <nav>
