@@ -10,10 +10,10 @@ const DogCard = props => {
       <h2 className="dog__name">{dog.name}</h2>
       <div className="dog__info">
         <p>{dog.breed}</p>
-        <p>{dog.age} years</p>
-        <p>{dog.gender}</p>
+        {dog.age ? <p>{dog.age} years</p> : <p>Unknown Age</p> }
+        <p>{dog.gender || 'Unknown gender'}</p>
         <p>
-          <i className="fas fa-map-marker-alt location" /> {dog.location}
+          <i className="fas fa-map-marker-alt location" /> {dog.location || 'Unknown Location'}
         </p>
       </div>
       <button

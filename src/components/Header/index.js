@@ -15,7 +15,7 @@ const Header = props => {
             <ul className="menu__list">
               <li className="menu__link">
                 <Link className="link__header" to={`/`}>
-                  Search
+                  List of Dogs
                 </Link>
               </li>
               <li className="menu__link">
