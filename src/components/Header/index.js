@@ -1,16 +1,14 @@
 import React from "react";
 import "./styles.scss";
 import { Link } from "react-router-dom";
+import Logo from "../../images/logo.svg"
 
 const Header = props => {
   return (
     <div className="header__container">
       <div className="header__wrapper">
         <div className="header__title">
-          <h1 className="header__logo-title">
-            {" "}
-            <i className="fas fa-dog"> </i> Adopt a doggo{" "}
-          </h1>
+        <img className="image__logo" src={Logo} alt="logo" />
         </div>
         <div className="header__menu">
           <nav>

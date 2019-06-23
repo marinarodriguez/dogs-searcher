@@ -36,10 +36,11 @@
   bottom: 4px;
   right: 8px;
   background-color: white;
-  color: $colorLightBlue;
+  color: $colorDarkBlue;
   text-transform: lowercase;
 }
 .dog__name {
+  color: white;
   background-color: $colorLightBlue;
   padding: 5px 5px 5px 10px;
 }
@@ -48,5 +49,5 @@
   line-height: 1.6em;
 }
 .location {
-  color: $colorDarkBlue;
+  color: #ED553B;
 }

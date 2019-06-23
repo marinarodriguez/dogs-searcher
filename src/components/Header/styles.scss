@@ -1,13 +1,17 @@
 @import "../../stylesheets/variables";
 
 .header__container {
-  background-color: #2f4858;
+  background-color: #5A2A2F;
   color: white;
   height: 100px;
 }
-.header__title {
-  margin: 5px 0;
+
+.header__logo-title{
+  font-size: 30px;
+  font-weight: normal;
+  color:#ED553B;
 }
+
 .header__wrapper {
   display: flex;
   flex-direction: column;
@@ -26,6 +30,7 @@
   cursor: pointer;
   transition: color ease 0.5s;
   &:hover {
-    color: $colorLightBlue;
+    color: #ED553B;
   }
 }
+
