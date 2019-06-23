@@ -16,10 +16,10 @@ const Header = props => {
           <nav>
             <ul className="menu__list">
               <li className="menu__link">
-              <Link to={`/`}>Search</Link>
+              <Link className="link__header" to={`/`}>Search</Link>
               </li>
               <li className="menu__link">
-              <Link to={`/adddog`}>Add</Link>
+              <Link className="link__header" to={`/adddog`}>Add</Link>
               </li>
             </ul>
           </nav>
