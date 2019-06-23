@@ -13,7 +13,8 @@ const Homepage = props => {
     isLoading,
     handleInputChange,
     newDog,
-    handleAdd
+    handleAdd,
+    isDisabled
   } = props;
   return (
     <div>
@@ -27,6 +28,7 @@ const Homepage = props => {
         handleInputChange={handleInputChange}
         newDog={newDog}
         handleAdd={handleAdd}
+        isDisabled={isDisabled}
       />
       <Footer />
     </div>

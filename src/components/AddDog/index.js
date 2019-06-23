@@ -3,7 +3,7 @@ import "./styles.scss";
 import PropTypes from "prop-types";
 
 const AddDog = props => {
-  const { handleInputChange, newDog, handleAdd } = props;
+  const { handleInputChange, newDog, handleAdd,isDisabled } = props;
   return (
     <div className="add-dog__container">
       <form className="form__add">
@@ -72,9 +72,9 @@ const AddDog = props => {
           id="location"
           name="location"
           type="text"
-          required="true"
+          required
         />
-        <button type="button" className="btn__add" onClick={handleAdd}>
+        <button disabled={isDisabled} type="button" className="btn__add" onClick={handleAdd}>
           Add Doggo
         </button>
       </form>

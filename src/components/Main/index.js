@@ -14,7 +14,8 @@ const Main = props => {
     isLoading,
     handleInputChange,
     newDog,
-    handleAdd
+    handleAdd,
+    isDisabled
   } = props;
   return (
     <div className="main__container">
@@ -40,6 +41,7 @@ const Main = props => {
                 handleInputChange={handleInputChange}
                 newDog={newDog}
                 handleAdd={handleAdd}
+                isDisabled={isDisabled}
               />
             );
           }}

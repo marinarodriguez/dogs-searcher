@@ -10,6 +10,7 @@ class App extends React.Component {
       dataDogs: [],
       filter: "",
       isLoading: true,
+      isDisabled: true,
       newDog: {
         name: "",
         age: "",
@@ -30,7 +31,13 @@ class App extends React.Component {
           [name]: value
         }
       };
-    });
+    })
+    if (this.state.newDog.name !== "" && this.state.newDog.breed !== "") {
+      this.setState({
+        isDisabled: false,
+      })
+    }
+    ;
   }
 
   handleAdd = () => {
@@ -105,7 +112,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { dataDogs, filter, isLoading, newDog } = this.state;
+    const { dataDogs, filter, isLoading, newDog, isDisabled } = this.state;
     return (
       <div>
         <Homepage
@@ -121,6 +128,7 @@ class App extends React.Component {
           handleInputChange={this.handleInputChange}
           newDog={newDog}
           handleAdd={this.handleAdd}
+          isDisabled={isDisabled}
         />
       </div>
     );

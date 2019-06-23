@@ -44,4 +44,8 @@
   &:hover {
     background-color: $colorDarkBlue;
   }
+  &:disabled{
+    background-color: rgb(185, 185, 185);
+    cursor: default;
+  }
 }
