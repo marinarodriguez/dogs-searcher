@@ -39,6 +39,11 @@ class App extends React.Component {
         isDisabled: false,
       })
     }
+    else if (this.state.newDog.name === "" || this.state.newDog.breed === ""){
+      this.setState({
+        isDisabled: true,
+      })
+    }
     ;
   }
 

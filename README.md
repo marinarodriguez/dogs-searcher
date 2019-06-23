@@ -4,6 +4,7 @@
 * Filters the dogs by breed.
 * You can add dogs.
 * You can delete dogs.
+* You can edit dogs.
 
 ------------------------------
 
