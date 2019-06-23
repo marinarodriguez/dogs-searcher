@@ -38,7 +38,6 @@ class App extends React.Component {
   }
 
   handleAdd() {
-    console.log(this.state.newDog);
     fetch(`https://dogtest-c855.restdb.io/rest/dogs`, {
       method: "POST",
       body: JSON.stringify(this.state.newDog),

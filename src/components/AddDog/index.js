@@ -18,6 +18,7 @@ const AddDog = props => {
           id="name"
           name="name"
           type="text"
+          required
         />
         <label className="label__add" htmlFor="age">
           {" "}
@@ -30,6 +31,7 @@ const AddDog = props => {
           id="age"
           name="age"
           type="number"
+          required
         />
         <label className="label__add" htmlFor="gender">
           {" "}
@@ -41,6 +43,7 @@ const AddDog = props => {
           className="input__add select__add"
           id="gender"
           name="gender"
+          required
         >
           <option value="female">female</option>
           <option value="male">male</option>
@@ -56,6 +59,7 @@ const AddDog = props => {
           id="breed"
           name="breed"
           type="text"
+          required
         />
         <label className="label__add" htmlFor="location">
           {" "}
@@ -68,6 +72,7 @@ const AddDog = props => {
           id="location"
           name="location"
           type="text"
+          required
         />
         <div className="btn__add" onClick={handleAdd}>
           Add Doggo
