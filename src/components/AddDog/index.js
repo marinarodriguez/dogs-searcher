@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const AddDog = props => {
   const { handleInputChange, newDog, handleAdd } = props;
@@ -18,7 +18,6 @@ const AddDog = props => {
           id="name"
           name="name"
           type="text"
-
         />
         <label className="label__add" htmlFor="age">
           {" "}
@@ -31,7 +30,6 @@ const AddDog = props => {
           id="age"
           name="age"
           type="number"
-
         />
         <label className="label__add" htmlFor="gender">
           {" "}
@@ -58,7 +56,6 @@ const AddDog = props => {
           id="breed"
           name="breed"
           type="text"
-      
         />
         <label className="label__add" htmlFor="location">
           {" "}
@@ -72,7 +69,9 @@ const AddDog = props => {
           name="location"
           type="text"
         />
-        <div className="btn__add" onClick={handleAdd}>Add Doggo</div>
+        <div className="btn__add" onClick={handleAdd}>
+          Add Doggo
+        </div>
       </form>
     </div>
   );

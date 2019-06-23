@@ -3,7 +3,7 @@ import "./styles.scss";
 import { Route, Switch } from "react-router-dom";
 import AddDog from "../AddDog";
 import Search from "../Search";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Main = props => {
   const {
@@ -14,7 +14,7 @@ const Main = props => {
     isLoading,
     handleInputChange,
     newDog,
-    handleAdd,
+    handleAdd
   } = props;
   return (
     <div className="main__container">
@@ -36,7 +36,11 @@ const Main = props => {
           path="/adddog"
           render={routerProps => {
             return (
-              <AddDog handleInputChange={handleInputChange} newDog={newDog} handleAdd={handleAdd} />
+              <AddDog
+                handleInputChange={handleInputChange}
+                newDog={newDog}
+                handleAdd={handleAdd}
+              />
             );
           }}
         />
@@ -55,6 +59,5 @@ Main.propTypes = {
   newDog: PropTypes.object.isRequired,
   handleAdd: PropTypes.func.isRequired
 };
-
 
 export default Main;

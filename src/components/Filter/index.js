@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Filter = props => {
   const { filter, handleFilter } = props;
@@ -23,8 +23,7 @@ const Filter = props => {
 
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,
-  handleFilter: PropTypes.func.isRequired,
+  handleFilter: PropTypes.func.isRequired
 };
-
 
 export default Filter;
