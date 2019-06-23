@@ -72,11 +72,11 @@ const AddDog = props => {
           id="location"
           name="location"
           type="text"
-          required
+          required="true"
         />
-        <div className="btn__add" onClick={handleAdd}>
+        <button type="button" className="btn__add" onClick={handleAdd}>
           Add Doggo
-        </div>
+        </button>
       </form>
     </div>
   );

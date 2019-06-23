@@ -18,13 +18,9 @@ class App extends React.Component {
         breed: ""
       }
     };
-    this.handleFilter = this.handleFilter.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
     this.setState(prevState => {
@@ -37,7 +33,7 @@ class App extends React.Component {
     });
   }
 
-  handleAdd() {
+  handleAdd = () => {
     fetch(`https://dogtest-c855.restdb.io/rest/dogs`, {
       method: "POST",
       body: JSON.stringify(this.state.newDog),
@@ -58,7 +54,7 @@ class App extends React.Component {
     );
   }
 
-  handleDelete(event) {
+  handleDelete = event => {
     this.setState({
       isLoading: true
     });
@@ -91,20 +87,33 @@ class App extends React.Component {
     });
   }
 
-  handleFilter(event) {
+  handleFilter = event => {
     const value = event.target.value;
     this.setState({
       filter: value
     });
   }
+
+  compare = (a, b) => {
+    if (a.name < b.name) {
+      return -1;
+    }
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
+  }
+
   render() {
     const { dataDogs, filter, isLoading, newDog } = this.state;
     return (
       <div>
         <Homepage
-          dataDogs={dataDogs.filter(
-            dog => filter === "" || dog.breed.includes(filter.toLowerCase())
-          )}
+          dataDogs={dataDogs
+            .sort(this.compare)
+            .filter(
+              dog => filter === "" || dog.breed.includes(filter.toLowerCase())
+            )}
           filter={filter}
           isLoading={isLoading}
           handleFilter={this.handleFilter}
