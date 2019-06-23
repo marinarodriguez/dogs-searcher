@@ -19,6 +19,8 @@ class App extends React.Component {
         breed: ""
       }
     };
+    this.getDog = this.getDog.bind(this);
+    this.handleEditDog = this.handleEditDog.bind(this);
   }
 
   handleInputChange = event => {
@@ -60,6 +62,35 @@ class App extends React.Component {
       )
     );
   }
+  getDog(id) {
+    const { dataDogs } = this.state;
+    return dataDogs.find(dog => dog._id === id);
+  }
+  handleEditDog(event) {
+    const id = event.target.value;
+    this.setState({
+      isLoading: true
+    });
+    fetch(`https://dogtest-c855.restdb.io/rest/dogs/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(this.state.newDog),
+      headers: {
+        "x-apikey": "5d0e613652556062830a46a9",
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(response =>
+      response.json().then(
+        fetchDogs().then(data => {
+          this.setState({
+            dataDogs: data,
+            isLoading: false
+          });
+        })
+      )
+    );
+  }
+
 
   handleDelete = event => {
     this.setState({
@@ -129,6 +160,8 @@ class App extends React.Component {
           newDog={newDog}
           handleAdd={this.handleAdd}
           isDisabled={isDisabled}
+          getDog={this.getDog}
+          handleEditDog={this.handleEditDog}
         />
       </div>
     );

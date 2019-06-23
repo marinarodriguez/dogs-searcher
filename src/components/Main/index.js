@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import AddDog from "../AddDog";
 import Search from "../Search";
 import PropTypes from "prop-types";
+import EditDog from "../EditDog";
 
 const Main = props => {
   const {
@@ -15,7 +16,9 @@ const Main = props => {
     handleInputChange,
     newDog,
     handleAdd,
-    isDisabled
+    isDisabled,
+    getDog,
+    handleEditDog,
   } = props;
   return (
     <div className="main__container">
@@ -46,6 +49,14 @@ const Main = props => {
             );
           }}
         />
+           <Route
+              path="/editdog/:id"
+              render={routerProps => (
+                <EditDog match={routerProps.match}   newDog={newDog} handleInputChange={handleInputChange}
+                dogToEdit={getDog(routerProps.match.params.id)} handleEditDog={handleEditDog}
+                  />
+              )}
+            />
       </Switch>
     </div>
   );

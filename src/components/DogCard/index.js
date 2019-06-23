@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const DogCard = props => {
   const { dog, handleDelete } = props;
@@ -22,6 +23,9 @@ const DogCard = props => {
       >
         X
       </button>
+      <Link to={`/editdog/${dog._id}`} className="btn__card edit">
+        edit
+      </Link>
     </div>
   );
 };
