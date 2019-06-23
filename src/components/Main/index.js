@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles.scss";
-import DogList from "../DogList";
 import { Route, Switch } from "react-router-dom";
 import AddDog from "../AddDog";
+import Search from "../Search";
+import EditDog from "../EditDog";
 
 const Main = props => {
   const {
@@ -14,6 +15,8 @@ const Main = props => {
     handleInputChange,
     newDog,
     handleAdd,
+    getDog,
+    handleEditDog
   } = props;
   return (
     <div className="main__container">
@@ -22,7 +25,7 @@ const Main = props => {
           exact
           path="/"
           render={routerProps => (
-            <DogList
+            <Search
               dataDogs={dataDogs}
               filter={filter}
               isLoading={isLoading}
@@ -39,6 +42,14 @@ const Main = props => {
             );
           }}
         />
+        <Route
+              path="/editdog/:id"
+              render={routerProps => (
+                <EditDog match={routerProps.match} handleEditDog={handleEditDog}  newDog={newDog} handleInputChange={handleInputChange}
+                dogToEdit={getDog(routerProps.match.params.id)}
+                  />
+              )}
+            />
       </Switch>
     </div>
   );

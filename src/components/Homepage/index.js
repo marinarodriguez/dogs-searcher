@@ -13,6 +13,8 @@ const Homepage = props => {
     handleInputChange,
     newDog,
     handleAdd,
+    getDog,
+    handleEditDog
   } = props;
   return (
     <div>
@@ -26,6 +28,8 @@ const Homepage = props => {
         handleInputChange={handleInputChange}
         newDog={newDog}
         handleAdd={handleAdd}
+        getDog={getDog}
+        handleEditDog={handleEditDog}
       />
       <Footer />
     </div>

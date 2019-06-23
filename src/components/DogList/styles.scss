@@ -1,10 +1,13 @@
 .doglist__loader{
     text-align: center;
-    margin: 30px;
+    margin: 30px 30px 50px 30px;
 }
 .doglist{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.doglist__results{
+    text-align: center;
 }

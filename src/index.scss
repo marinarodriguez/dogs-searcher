@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: $colorDarkBlue;
   font-family: 'Mali', cursive;
 }
 h1, h2, h3, h4 {
@@ -12,9 +13,6 @@ h1, h2, h3, h4 {
 a{
   color: white;
   text-decoration: none;
-  :hover{
-      color: $colorLightBlue;
-  }
 }
 p {
   margin: 0;

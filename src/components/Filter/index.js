@@ -9,7 +9,7 @@ const Filter = props => {
         <input
           type="text"
           className="filter__input"
-          placeholder="yorkshire"
+          placeholder="search breed"
           value={filter}
           onChange={handleFilter}
           id="breed_searcher"

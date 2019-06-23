@@ -22,6 +22,8 @@ class App extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
+    this.getDog = this.getDog.bind(this);
+    this.handleEditDog = this.handleEditDog.bind(this);
   }
 
   handleInputChange(event) {
@@ -46,8 +48,7 @@ class App extends React.Component {
         Accept: "application/json",
         "Content-Type": "application/json"
       }
-    })
-    .then(response =>
+    }).then(response =>
       response.json().then(
         fetchDogs().then(data => {
           this.setState({
@@ -61,8 +62,8 @@ class App extends React.Component {
 
   handleDelete(event) {
     this.setState({
-      isLoading: true,
-    })
+      isLoading: true
+    });
     const id = event.target.value;
     fetch(`https://dogtest-c855.restdb.io/rest/dogs/${id}`, {
       method: "DELETE",
@@ -98,6 +99,35 @@ class App extends React.Component {
       filter: value
     });
   }
+  getDog(id) {
+    const { dataDogs } = this.state;
+    return dataDogs.find(dog => dog._id === id);
+  }
+  handleEditDog(event) {
+    this.setState({
+      isLoading: true
+    });
+    const id = event.target.value;
+    fetch(`https://dogtest-c855.restdb.io/rest/dogs/${id}`, {
+      method: "PATCH",
+      headers: {
+        body: JSON.stringify(this.state.newDog),
+        "x-apikey": "5d0e613652556062830a46a9",
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(response =>
+      response.json().then(
+        fetchDogs().then(data => {
+          this.setState({
+            dataDogs: data,
+            isLoading: false
+          });
+        })
+      )
+    );
+    console.log(this.state.newDog);
+  }
 
   render() {
     const { dataDogs, filter, isLoading, newDog } = this.state;
@@ -114,6 +144,8 @@ class App extends React.Component {
           handleInputChange={this.handleInputChange}
           newDog={newDog}
           handleAdd={this.handleAdd}
+          getDog={this.getDog}
+          handleEditDog={this.handleEditDog}
         />
       </div>
     );

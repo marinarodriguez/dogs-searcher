@@ -1,27 +1,53 @@
-@import '../../stylesheets/variables';
+@import "../../stylesheets/variables";
 
-.dog__card{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid $colorDarkBlue;
-    border-radius: 4px;
-    margin: 10px 10px;
-    width: 250px;
-    padding: 10px;
+.dog__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $colorLightBlue;
+  border-radius: 4px;
+  margin: 10px 10px;
+  width: 250px;
+  text-transform: capitalize;
 }
 .btn__card {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: $colorLightBlue;
-    border: 1px transparent solid;
-    color: white;
-    height: 30px;
-    text-align: center;
-    width: 35px;
-    align-self: flex-end;
-    font-size: 20px;
-    font-family: 'Mali', cursive;
-  }
+  position: absolute;
+  background-color: $colorLightBlue;
+  border: 1px transparent solid;
+  color: white;
+  height: 30px;
+  text-align: center;
   
+  align-self: flex-end;
+  font-size: 20px;
+  font-family: "Mali", cursive;
+  cursor: pointer;
+  transition: color ease 0.5s;
+  &:hover {
+    color: $colorDarkBlue;
+  }
+}
+.delete {
+    top: 4px;
+    right: 4px;
+    width: 35px;
+}
+.edit {
+    bottom: 4px;
+    right: 8px;
+    background-color: white;
+    color: $colorLightBlue;
+    text-transform: lowercase;
+}
+.dog__name {
+  background-color: $colorLightBlue;
+  padding: 5px 5px 5px 10px;
+  
+}
+.dog__info {
+  margin: 10px;
+  line-height: 1.6em;
+}
+.location {
+  color: $colorDarkBlue;
+}

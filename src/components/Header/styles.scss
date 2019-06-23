@@ -23,13 +23,9 @@
     justify-content: space-evenly;
 }
 .link__header{
-    :active {
-        color: $colorLightBlue;
-    }
-    :hover{
-        color: $colorLightBlue;
-    }
-    :visited {
-        color: $colorLightBlue;
+    cursor: pointer;
+    transition: color ease 0.5s;
+    &:hover {
+      color: $colorLightBlue;
     }
 }
