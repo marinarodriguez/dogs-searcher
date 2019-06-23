@@ -53,7 +53,7 @@ const Main = props => {
               path="/editdog/:id"
               render={routerProps => (
                 <EditDog match={routerProps.match}   newDog={newDog} handleInputChange={handleInputChange}
-                dogToEdit={getDog(routerProps.match.params.id)} handleEditDog={handleEditDog}
+                dogToEdit={getDog(routerProps.match.params.id)} handleEditDog={handleEditDog} isDisabled={isDisabled}
                   />
               )}
             />

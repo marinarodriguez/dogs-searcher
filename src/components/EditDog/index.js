@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles.scss";
+import { Link } from "react-router-dom";
 
 const EditDog = props => {
-  const { handleInputChange, newDog, dogToEdit, handleEditDog } = props;
+  const { handleInputChange, newDog, dogToEdit, handleEditDog, isDisabled } = props;
   if (!dogToEdit) {
     return <p>Loading</p>;
   } else {
@@ -79,9 +80,10 @@ const EditDog = props => {
             type="text"
             required
           />
-          <button type="button" className="btn__add" value={dogToEdit._id} onClick={handleEditDog}>
+          <Link className="link__header" to={`/`}><button type="button" className="btn__add" value={dogToEdit._id} disabled={isDisabled} onClick={handleEditDog}>
             Edit Doggo
           </button>
+          </Link>
         </form>
       </div>
     );
